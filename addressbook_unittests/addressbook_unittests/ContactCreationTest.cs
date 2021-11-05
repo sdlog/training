@@ -5,6 +5,7 @@ namespace addressbook_unittests
     [TestFixture]
     public class ContactCreation : TestBase
     {
+        [Test]
         public void ContactCreationTest()
         {
             OpenTestPage();
