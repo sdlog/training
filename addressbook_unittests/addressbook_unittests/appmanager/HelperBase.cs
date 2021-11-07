@@ -8,10 +8,12 @@ namespace addressbook_unittests
 {
     public class HelperBase
     {
+        protected ApplicationManager manager;
         protected IWebDriver driver;
-        protected HelperBase (IWebDriver driver)
+        protected HelperBase (ApplicationManager manager)
         {
-            this.driver = driver;
+            this.manager = manager;
+            this.driver = manager.Driver;
         }
     }
 }

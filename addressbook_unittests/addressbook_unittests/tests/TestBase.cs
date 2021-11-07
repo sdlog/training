@@ -17,6 +17,8 @@ namespace addressbook_unittests
         protected void SetupTest()
         {
             appmanager = new ApplicationManager();
+            appmanager.NavigationH.OpenTestPage();
+            appmanager.LoginH.Login(new AccountData("admin", "secret"));
         }
 
         [TearDown]

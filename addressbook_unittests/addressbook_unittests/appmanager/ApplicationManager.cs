@@ -20,11 +20,11 @@ namespace addressbook_unittests
         public ApplicationManager()
         {
             driver = new FirefoxDriver();
-            baseURL = "http://localhost/addressbook/";
-            loginHelper = new LoginHelper(driver);
-            navigation = new NavigationHelper(driver, baseURL);
-            groupHelper = new GroupHelper(driver);
-            contactHelper = new ContactHelper(driver);
+            baseURL = "http://localhost/addressbook";
+            loginHelper = new LoginHelper(this);
+            navigation = new NavigationHelper(this, baseURL);
+            groupHelper = new GroupHelper(this);
+            contactHelper = new ContactHelper(this);
         }
         public void Stop()
         {
@@ -63,6 +63,14 @@ namespace addressbook_unittests
             get
             {
                 return contactHelper;
+            }
+        }
+
+        public IWebDriver Driver 
+        {
+            get
+            {
+                return driver;
             }
         }
     }

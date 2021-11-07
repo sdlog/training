@@ -10,10 +10,10 @@
       <Field Name="appmanager" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="addressbook_unittests.GroupCreation" Collapsed="true">
+  <Class Name="addressbook_unittests.GroupCreationTest" Collapsed="true">
     <Position X="1" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>tests\GroupCreationTest.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,10 +45,10 @@
       <FileName>appmanager\NavigationHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="addressbook_unittests.ContactCreation" Collapsed="true">
+  <Class Name="addressbook_unittests.ContactCreationTest" Collapsed="true">
     <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>tests\ContactCreationTest.cs</FileName>
     </TypeIdentifier>
   </Class>

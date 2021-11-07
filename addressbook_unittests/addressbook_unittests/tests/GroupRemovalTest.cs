@@ -8,12 +8,7 @@ namespace addressbook_unittests
         [Test]
         public void GroupRemoval()
         {
-            appmanager.NavigationH.OpenTestPage();
-            appmanager.LoginH.Login(new AccountData("admin", "secret"));
-            appmanager.NavigationH.OpenGroupsPage();
-            appmanager.GroupH.SelectGroup();
-            appmanager.GroupH.DeleteGroup();
-            appmanager.NavigationH.ReturnToGroupsPage();
+            appmanager.GroupH.Remove(1);
         }
     }
 }
