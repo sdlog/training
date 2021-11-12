@@ -13,11 +13,6 @@ namespace addressbook_unittests
         public GroupHelper(ApplicationManager manager):base(manager)
         {
         }
-        public GroupHelper StartNewGroupCreation()
-        {
-            driver.FindElement(By.Name("new")).Click();
-            return this;
-        }
 
         public GroupHelper Create(GroupData group)
         {
@@ -37,7 +32,26 @@ namespace addressbook_unittests
             ReturnToGroupsPage();
             return this;
         }
-
+        public GroupHelper Modify(int n, GroupData group)
+        {
+            manager.NavigationH.OpenGroupsPage();
+            SelectGroup(n);
+            StartGroupModification();
+            FillGroupForm(group);
+            SubmitGroupModification();
+            ReturnToGroupsPage();
+            return this;
+        }
+        public GroupHelper StartNewGroupCreation()
+        {
+            driver.FindElement(By.Name("new")).Click();
+            return this;
+        }
+        public GroupHelper StartGroupModification()
+        {
+            driver.FindElement(By.Name("edit")).Click();
+            return this;
+        }
         public GroupHelper FillGroupForm(GroupData group)
         {
             driver.FindElement(By.Name("group_name")).Click();
@@ -54,6 +68,11 @@ namespace addressbook_unittests
         public GroupHelper SubmitGroupCreation()
         {
             driver.FindElement(By.Name("submit")).Click();
+            return this;
+        }
+        public GroupHelper SubmitGroupModification()
+        {
+            driver.FindElement(By.Name("update")).Click();
             return this;
         }
         public GroupHelper SelectGroup(int index)

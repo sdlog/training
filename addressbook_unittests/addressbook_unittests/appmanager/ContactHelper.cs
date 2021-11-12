@@ -21,6 +21,29 @@ namespace addressbook_unittests
             manager.NavigationH.OpenHomePage();
             return this;
         }
+        public ContactHelper RemoveFromContactList()
+        {
+            SelectContact();
+            DeleteContact();
+            SubmitContactRemoving();
+            return this;
+        }
+        public ContactHelper RemoveFromModificationWindow()
+        {
+            SelectContact();
+            ModifyContact();
+            DeleteContact();
+            return this;
+        }
+        public ContactHelper Modify(ContactData contact)
+        {
+            SelectContact();
+            ModifyContact();
+            FillContactForm(contact);
+            SubmitContactModification();
+            manager.NavigationH.OpenHomePage();
+            return this;
+        }
         public ContactHelper FillContactForm(ContactData contact)
         {
             driver.FindElement(By.Name("firstname")).Click();
@@ -43,6 +66,31 @@ namespace addressbook_unittests
         public ContactHelper SubmitContactCreation()
         {
             driver.FindElement(By.XPath("//div[@id='content']/form/input[21]")).Click();
+            return this;
+        }
+        public ContactHelper SubmitContactRemoving()
+        {
+            driver.SwitchTo().Alert().Accept();
+            return this;
+        }
+        public ContactHelper SubmitContactModification()
+        {
+            driver.FindElement(By.Name("update")).Click();
+            return this;
+        }
+        public ContactHelper SelectContact()
+        {
+            driver.FindElement(By.XPath("//input[@type='checkbox']")).Click();
+            return this;
+        }
+        public ContactHelper DeleteContact()
+        {
+            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+            return this;
+        }
+        public ContactHelper ModifyContact()
+        {
+            driver.FindElement(By.XPath(".//*[@title='Edit']")).Click();
             return this;
         }
     }
